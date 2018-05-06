@@ -8,6 +8,10 @@ import java.util.List;
 
 public class SQLFunction {
 
+    /**
+     *This method create new entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void createEmployee(String nameAndFamily, String phone, double salary) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -29,6 +33,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method create new entity "Department" in database table "departments".
+     * @see Department
+     */
     public void createDepartment(String name, String chief, Employee employee) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -50,6 +58,9 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method shows all fields from "employees" table in database.
+     */
     public void listEmployees() {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -74,6 +85,9 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method shows all fields from "departments" table in database.
+     */
     public void listDepartments() {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -96,6 +110,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "salary" field in selected entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void updateEmployeeSalary(String employeeName, double salary) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -115,6 +133,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "departmentName" field in selected entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void updateEmployeeDepartment(String employeeName, String department) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -134,6 +156,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "phone" field in selected entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void updateEmployeePhone(String employeeName, String phone) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -153,6 +179,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "nameAndFamily" field in selected entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void updateEmployeeName(String employeeName, String name) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -172,6 +202,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "name" field in selected entity "Department" in database table "departments".
+     * @see Department
+     */
     public void updateDepartmentName(String departmentName, String name) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -191,6 +225,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method update "chief" field in selected entity "Department" in database table "departments".
+     * @see Department
+     */
     public void updateDepartmentChief(String departmentName, String chief) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -210,6 +248,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method delete selected entity "Employee" in database table "employees".
+     * @see Employee
+     */
     public void deleteEmployee(String employeeName) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -228,6 +270,10 @@ public class SQLFunction {
         }
     }
 
+    /**
+     *This method delete selected entity "Department" in database table "departments".
+     * @see Department
+     */
     public void deleteDepartment(String departmentName) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;

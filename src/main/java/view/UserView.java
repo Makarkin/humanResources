@@ -1,5 +1,7 @@
 package view;
 
+import model.SQLFunction;
+
 import java.util.Scanner;
 
 public class UserView {
@@ -20,34 +22,65 @@ public class UserView {
 
     private String typeOfActions;
 
+    /**
+     *This is getter for String "employeeDepartmentName" field.
+     *@return String "employeeDepartmentName" field.
+     */
     public String getEmployeeDepartmentName() {
         return employeeDepartmentName;
     }
 
+    /**
+     *This is getter for String "typeOfActions" field.
+     *@return String "typeOfActions" field.
+     */
     public String getTypeOfActions() {
         return typeOfActions;
     }
 
+    /**
+     *This is getter for String "employeeName" field.
+     *@return String "employeeName" field.
+     */
     public String getEmployeeName() {
         return employeeName;
     }
 
+    /**
+     *This is getter for String "employeePhone" field.
+     *@return String "employeePhone" field.
+     */
     public String getEmployeePhone() {
         return employeePhone;
     }
 
+    /**
+     *This is getter for String "employeeSalary" field.
+     *@return String "employeeSalary" field.
+     */
     public String getEmployeeSalary() {
         return employeeSalary;
     }
 
+    /**
+     *This is getter for String "departmentName" field.
+     *@return String "departmentName" field.
+     */
     public String getDepartmentName() {
         return departmentName;
     }
 
+    /**
+     *This is getter for String "departmentChief" field.
+     *@return String "departmentChief" field.
+     */
     public String getDepartmentChief() {
         return departmentChief;
     }
 
+    /**
+     *This method fills "UserView" class fields.
+     */
     public void chooseAction() {
         String chooseString = "Enter the number and choose you actions: \n" + "1: Create employee and his department\n" + "2: Update department or employee\n" + "3: Show department or employee\n" + "4: Delete employee and his department";
         System.out.println(chooseString);

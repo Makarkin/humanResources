@@ -4,8 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.cfg.Configuration;
 
 public class HibernateSessionFactory {
     private static SessionFactory sessionFactory = buildSessionFactory();
@@ -27,9 +25,5 @@ public class HibernateSessionFactory {
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
-    }
-
-    public static void shutdown() {
-        getSessionFactory().close();
     }
 }
