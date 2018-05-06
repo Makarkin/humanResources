@@ -20,30 +20,58 @@ public class UserView {
 
     private String typeOfActions;
 
+    /**
+     * This is getter for String "employeeDepartmentName" field.
+     *@return String "employeeDepartmentName" field.
+     */
     public String getEmployeeDepartmentName() {
         return employeeDepartmentName;
     }
 
+    /**
+     * This is getter for String "typeOfActions" field.
+     *@return String "typeOfActions" field.
+     */
     public String getTypeOfActions() {
         return typeOfActions;
     }
 
+    /**
+     * This is getter for String "employeeName" field.
+     *@return String "employeeName" field.
+     */
     public String getEmployeeName() {
         return employeeName;
     }
 
+    /**
+     * This is getter for String "employeePhone" field.
+     *@return String "employeePhone" field.
+     */
     public String getEmployeePhone() {
         return employeePhone;
     }
 
+    /**
+     * This is getter for String "employeeSalary" field.
+     *@return String "employeeSalary" field.
+     */
     public String getEmployeeSalary() {
         return employeeSalary;
     }
 
+    /**
+     * This is getter for String "departmentName" field.
+     *@return String "departmentName" field.
+     */
     public String getDepartmentName() {
         return departmentName;
     }
 
+    /**
+     * This is getter for String "departmentChief" field.
+     *@return String "departmentChief" field.
+     */
     public String getDepartmentChief() {
         return departmentChief;
     }
@@ -68,6 +96,9 @@ public class UserView {
         }
     }
 
+    /**
+     * This method fills "UserView" class fields.
+     */
     private void createView() {
         this.typeOfActions = "create";
         System.out.println("Enter Name of Employee");
