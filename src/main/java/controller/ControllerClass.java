@@ -9,6 +9,12 @@ public class ControllerClass {
     private SQLFunction sqlFunction = new SQLFunction();
     String tempName;
 
+        /**
+     * This method collects information from "UserView" class fields,
+     * and corresponds it to "SQLFunction" query creator.
+     * @see UserView
+     * @see SQLFunction
+     */
     public void getInformation() {
         userView.chooseAction();
         String typeOfAction = userView.getTypeOfActions();
