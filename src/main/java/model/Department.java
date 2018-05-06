@@ -17,20 +17,20 @@ public class Department {
     private Employee employee;
 
     /**
-     *This is getter for String "name" field.
+     * This is getter for String "name" field.
      *@return String "generalOrder" field.
      */
     public String getName() { return name; }
 
 
     /**
-     *This is setter for String "name" field.
+     * This is setter for String "name" field.
      */
     public void setName(String name) { this.name = name; }
 
 
     /**
-     *This is getter for "employee" field.
+     * This is getter for "employee" field.
      *@return Employee "generalOrder" field.
      * @see Employee
      */
@@ -38,13 +38,13 @@ public class Department {
 
 
     /**
-     *This is setter for "employee" field.
+     * This is setter for "employee" field.
      *@see Employee
      */
     public void setEmployee(Employee employee) { employee.setDepartment(this); this.employee = employee; }
 
     /**
-     *This is getter for String "chief" field.
+     * This is getter for String "chief" field.
      *@return String "chief" field.
      */
     public String getChief() {
@@ -52,7 +52,7 @@ public class Department {
     }
 
     /**
-     *This is setter for String "chief" field.
+     * This is setter for String "chief" field.
      */
     public void setChief(String chief) {
         this.chief = chief;

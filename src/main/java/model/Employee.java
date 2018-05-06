@@ -24,7 +24,7 @@ public class Employee {
     private Department department;
 
     /**
-     *This is getter for Department "department" field.
+     * This is getter for Department "department" field.
      *@return Department "department" field.
      *@see Department
      */
@@ -32,13 +32,13 @@ public class Employee {
 
 
     /**
-     *This is setter for Department "department" field.
+     * This is setter for Department "department" field.
      *@see Department
      */
     public void setDepartment(Department department) { this.department = department; }
 
     /**
-     *This is getter for String "nameAndFamily" field.
+     * This is getter for String "nameAndFamily" field.
      *@return String "nameAndFamily" field.
      */
     public String getNameAndFamily() {
@@ -46,7 +46,7 @@ public class Employee {
     }
 
     /**
-     *This is setter for String "nameAndFamily" field.
+     * This is setter for String "nameAndFamily" field.
      */
     public void setNameAndFamily(String nameAndFamily) {
         this.nameAndFamily = nameAndFamily;
@@ -54,20 +54,20 @@ public class Employee {
 
 
     /**
-     *This is getter for String "departmentName" field.
+     * This is getter for String "departmentName" field.
      *@return String "departmentName" field.
      */
     public String getDepartmentName() { return departmentName; }
 
     /**
-     *This is setter for String "departmentName" field.
+     * This is setter for String "departmentName" field.
      */
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
     }
 
     /**
-     *This is getter for String "phone" field.
+     * This is getter for String "phone" field.
      *@return String "phone" field.
      */
     public String getPhone() {
@@ -75,14 +75,14 @@ public class Employee {
     }
 
     /**
-     *This is setter for String "phone" field.
+     * This is setter for String "phone" field.
      */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
     /**
-     *This is getter for double "salary" field.
+     * This is getter for double "salary" field.
      *@return double "phone" field.
      */
     public double getSalary() {
@@ -90,7 +90,7 @@ public class Employee {
     }
 
     /**
-     *This is setter for double "salary" field.
+     * This is setter for double "salary" field.
      */
     public void setSalary(double salary) {
         this.salary = salary;

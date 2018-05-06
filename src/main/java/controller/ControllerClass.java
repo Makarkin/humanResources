@@ -10,7 +10,7 @@ public class ControllerClass {
     String tempName;
 
     /**
-     *This method collects information from "UserView" class fields,
+     * This method collects information from "UserView" class fields,
      * and corresponds it to "SQLFunction" query creator.
      * @see UserView
      * @see SQLFunction
