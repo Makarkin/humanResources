@@ -25,11 +25,11 @@ public class HibernateSessionFactory {
         return sessionFactory;
     }
 
+    /**
+     * This is getter for SessionFactory "sessionFactory" field.
+     *@return SessionFactory "sessionFactory" field.
+     */
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
-    }
-
-    public static void shutdown() {
-        getSessionFactory().close();
     }
 }
