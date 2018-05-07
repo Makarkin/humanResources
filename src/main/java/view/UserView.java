@@ -1,5 +1,9 @@
 package view;
 
+import model.SQLFunction;
+import org.hibernate.HibernateException;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserView {
@@ -74,6 +78,20 @@ public class UserView {
      */
     public String getDepartmentChief() {
         return departmentChief;
+    }
+
+    /**
+     * This method shows result of SQL query from "SQLFunction" methods".
+     *@see SQLFunction
+     */
+    public void response(ArrayList<String> inputData) {
+        try {
+            for (String field : inputData) {
+                System.out.println(field);
+            }
+        } catch (Exception e) {
+              System.out.println("Errrrrrrror!!");
+        }
     }
 
     /**

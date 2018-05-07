@@ -2,7 +2,9 @@ package controller;
 
 import model.Employee;
 import model.SQLFunction;
+import org.hibernate.HibernateException;
 import view.UserView;
+import java.util.ArrayList;
 
 public class ControllerClass {
     private UserView userView = new UserView();
@@ -20,48 +22,58 @@ public class ControllerClass {
         String typeOfAction = userView.getTypeOfActions();
         switch (typeOfAction) {
             case "create":
-                createEntity();
+                userView.response(createEntity());
                 break;
             case "delete":
-                deleteEntity();
+                userView.response(deleteEntity());
                 break;
             case "show departments":
-                sqlFunction.listDepartments();
+                userView.response(showDepartments());
                 break;
             case "show employees":
-                sqlFunction.listEmployees();
+                userView.response(showEmployees());
                 break;
             case "update":
-                updateEntity();
+                userView.response(updateEntity());
                 break;
         }
     }
 
-    private void createEntity() {
+    private ArrayList<String> showEmployees() throws HibernateException {
+        return sqlFunction.showEmployees();
+    }
+
+    private ArrayList<String> showDepartments() throws HibernateException {
+        return sqlFunction.showDepartments();
+    }
+
+    private ArrayList<String> createEntity() throws HibernateException {
         Employee employee = new Employee();
         employee.setNameAndFamily(userView.getEmployeeName());
         employee.setPhone(userView.getEmployeePhone());
         employee.setSalary(Double.parseDouble(userView.getEmployeeSalary()));
-        sqlFunction.createDepartment(userView.getDepartmentName(), userView.getDepartmentChief(), employee);
+        return sqlFunction.createDepartment(userView.getDepartmentName(), userView.getDepartmentChief(), employee);
     }
 
-    private void deleteEntity() {
+    private ArrayList<String> deleteEntity() throws HibernateException {
         tempName = userView.getDepartmentName();
         if (tempName != null) {
-            sqlFunction.deleteDepartment(tempName);
+            return sqlFunction.deleteDepartment(tempName);
         } else {
-            sqlFunction.deleteEmployee(tempName);
+            return sqlFunction.deleteEmployee(tempName);
         }
     }
 
-    private void updateEntity() {
+    private ArrayList<String> updateEntity() throws HibernateException {
+        ArrayList<String> outputData = new ArrayList<>();
         tempName = userView.getDepartmentName();
         if (tempName != null) {
-            sqlFunction.updateDepartmentChief(tempName, userView.getDepartmentChief());
+            return sqlFunction.updateDepartmentChief(tempName, userView.getDepartmentChief());
         } else {
-            sqlFunction.updateEmployeePhone(tempName, userView.getEmployeePhone());
-            sqlFunction.updateEmployeeSalary(tempName, Double.parseDouble(userView.getEmployeeSalary()));
-            sqlFunction.updateEmployeeDepartment(tempName, userView.getDepartmentName());
+            outputData.addAll(sqlFunction.updateEmployeePhone(tempName, userView.getEmployeePhone()));
+            outputData.addAll(sqlFunction.updateEmployeeSalary(tempName, Double.parseDouble(userView.getEmployeeSalary())));
+            outputData.addAll(sqlFunction.updateEmployeeDepartment(tempName, userView.getDepartmentName()));
+            return outputData;
         }
     }
 }
