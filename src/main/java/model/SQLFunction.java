@@ -12,10 +12,9 @@ public class SQLFunction {
     /**
      * This method create new entity "Employee" in database table "employees".
      * @see Employee
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> createEmployee(String nameAndFamily, String phone, double salary)
-            throws HibernateException {
+    public ArrayList<String> createEmployee(String nameAndFamily, String phone, double salary) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -35,9 +34,9 @@ public class SQLFunction {
     /**
      * This method create new entity "Department" in database table "departments".
      * @see Department
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> createDepartment(String name, String chief, Employee employee) throws HibernateException {
+    public ArrayList<String> createDepartment(String name, String chief, Employee employee) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -56,9 +55,9 @@ public class SQLFunction {
 
     /**
      * This method shows all fields from "employees" table in database.
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> showEmployees() throws HibernateException {
+    public ArrayList<String> showEmployees() throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -78,9 +77,9 @@ public class SQLFunction {
 
     /**
      * This method shows all fields from "departments" table in database.
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> showDepartments() throws HibernateException {
+    public ArrayList<String> showDepartments() throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -99,9 +98,9 @@ public class SQLFunction {
     /**
      * This method update "salary" field in selected entity "Employee" in database table "employees".
      * @see Employee
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> updateEmployeeSalary(String employeeName, double salary) throws HibernateException {
+    public ArrayList<String> updateEmployeeSalary(String employeeName, double salary) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -118,9 +117,9 @@ public class SQLFunction {
     /**
      * This method update "departmentName" field in selected entity "Employee" in database table "employees".
      * @see Employee
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> updateEmployeeDepartment(String employeeName, String department) throws HibernateException {
+    public ArrayList<String> updateEmployeeDepartment(String employeeName, String department) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -137,9 +136,9 @@ public class SQLFunction {
     /**
      * This method update "phone" field in selected entity "Employee" in database table "employees".
      * @see Employee
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> updateEmployeePhone(String employeeName, String phone) throws HibernateException {
+    public ArrayList<String> updateEmployeePhone(String employeeName, String phone) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -156,9 +155,9 @@ public class SQLFunction {
     /**
      * This method update "chief" field in selected entity "Department" in database table "departments".
      * @see Department
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> updateDepartmentChief(String departmentName, String chief) throws HibernateException {
+    public ArrayList<String> updateDepartmentChief(String departmentName, String chief) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -175,9 +174,9 @@ public class SQLFunction {
     /**
      * This method delete selected entity "Employee" in database table "employees".
      * @see Employee
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> deleteEmployee(String employeeName) throws HibernateException {
+    public ArrayList<String> deleteEmployee(String employeeName) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -193,9 +192,9 @@ public class SQLFunction {
     /**
      * This method delete selected entity "Department" in database table "departments".
      * @see Department
-     * @throws HibernateException
+     * @throws Exception
      */
-    public ArrayList<String> deleteDepartment(String departmentName) throws HibernateException {
+    public ArrayList<String> deleteDepartment(String departmentName) throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction transaction = null;

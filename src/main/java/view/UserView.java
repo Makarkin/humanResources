@@ -85,12 +85,8 @@ public class UserView {
      *@see SQLFunction
      */
     public void response(ArrayList<String> inputData) {
-        try {
-            for (String field : inputData) {
-                System.out.println(field);
-            }
-        } catch (Exception e) {
-              System.out.println("Errrrrrrror!!");
+        for (String field : inputData) {
+            System.out.println(field);
         }
     }
 

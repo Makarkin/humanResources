@@ -20,34 +20,40 @@ public class ControllerClass {
     public void getInformation() {
         userView.chooseAction();
         String typeOfAction = userView.getTypeOfActions();
-        switch (typeOfAction) {
-            case "create":
-                userView.response(createEntity());
-                break;
-            case "delete":
-                userView.response(deleteEntity());
-                break;
-            case "show departments":
-                userView.response(showDepartments());
-                break;
-            case "show employees":
-                userView.response(showEmployees());
-                break;
-            case "update":
-                userView.response(updateEntity());
-                break;
+        try {
+            switch (typeOfAction) {
+                case "create":
+                    userView.response(createEntity());
+                    break;
+                case "delete":
+                    userView.response(deleteEntity());
+                    break;
+                case "show departments":
+                    userView.response(showDepartments());
+                    break;
+                case "show employees":
+                    userView.response(showEmployees());
+                    break;
+                case "update":
+                    userView.response(updateEntity());
+                    break;
+            }
+        } catch (Exception e) {
+            ArrayList<String> exeptionList = new ArrayList<String>();
+            exeptionList.add(e.getMessage());
+            userView.response(exeptionList);
         }
     }
 
-    private ArrayList<String> showEmployees() throws HibernateException {
+    private ArrayList<String> showEmployees() throws Exception {
         return sqlFunction.showEmployees();
     }
 
-    private ArrayList<String> showDepartments() throws HibernateException {
+    private ArrayList<String> showDepartments() throws Exception {
         return sqlFunction.showDepartments();
     }
 
-    private ArrayList<String> createEntity() throws HibernateException {
+    private ArrayList<String> createEntity() throws Exception {
         Employee employee = new Employee();
         employee.setNameAndFamily(userView.getEmployeeName());
         employee.setPhone(userView.getEmployeePhone());
@@ -55,7 +61,7 @@ public class ControllerClass {
         return sqlFunction.createDepartment(userView.getDepartmentName(), userView.getDepartmentChief(), employee);
     }
 
-    private ArrayList<String> deleteEntity() throws HibernateException {
+    private ArrayList<String> deleteEntity() throws Exception {
         tempName = userView.getDepartmentName();
         if (tempName != null) {
             return sqlFunction.deleteDepartment(tempName);
@@ -64,7 +70,7 @@ public class ControllerClass {
         }
     }
 
-    private ArrayList<String> updateEntity() throws HibernateException {
+    private ArrayList<String> updateEntity() throws Exception {
         ArrayList<String> outputData = new ArrayList<>();
         tempName = userView.getDepartmentName();
         if (tempName != null) {
